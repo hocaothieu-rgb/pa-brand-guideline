@@ -1,0 +1,345 @@
+<title>Peter Ahn Brand Identity</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Peter Ahn brand guideline by EO Vietnam Studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: a portfolio project page — one 1400px column of seamless image/video modules, narrow text modules between, a floating action rail, an info footer. Single light look on purpose. */
+  :root {
+    --page: #ffffff; --ink: #191919; --muted: #6e6e73; --line: #e6e6e9; --chip: #f2f2f4;
+    --accent: #111112; --soft: #f7f7f8;
+    --f-ui: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--page); color: var(--ink); font-family: var(--f-ui); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--page); }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+  /* top bar */
+  .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(255,255,255,.94); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line);
+         padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .top-in { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 14px; height: 58px; }
+  .studio { font-weight: 700; letter-spacing: .02em; font-size: 15px; white-space: nowrap; }
+  .crumbs { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .top .sp { flex: 1; }
+  .btn { font: 600 13px/1 var(--f-ui); border-radius: 999px; padding: 10px 16px; border: 1px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer; white-space: nowrap; }
+  .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn[aria-pressed="true"] { background: #fff; color: var(--ink); border-color: var(--ink); }
+
+  /* project header */
+  .head { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .head-in { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 14px; padding-block: 18px 16px; }
+  .owner-av { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex: none; background: #111; }
+  .owner-av img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ptitle { font-size: 17px; font-weight: 600; line-height: 1.25; text-wrap: balance; margin: 0; }
+  .powner { font-size: 13px; color: var(--muted); margin: 2px 0 0; }
+
+  /* project column */
+  .proj { max-width: 1400px; margin: 0 auto; }
+  .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); position: relative; }
+  .mod { display: block; width: 100%; max-width: 100%; height: auto; margin: 0; }
+  .mod img, .mod video { display: block; width: 100%; height: auto; max-width: 100%; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .row.three { grid-template-columns: 1fr 1fr 1fr; }
+  .row > * { min-width: 0; }
+  .row img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tall { aspect-ratio: 9 / 15; overflow: hidden; background: #111; }
+  .vbox { position: relative; background: #0f0f10; }
+  .snd { position: absolute; right: 14px; bottom: 14px; font: 500 12px/1 var(--f-mono); color: #fff; background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 9px 13px; cursor: pointer; }
+  .snd[aria-pressed="true"] { background: #fff; color: #111; }
+
+  /* text modules (narrow column like a project page) */
+  .txt { background: var(--page); padding-block: clamp(48px, 7vw, 96px); }
+  .txt .in { max-width: 760px; margin: 0 auto; }
+  .eyebrow { font: 500 12px/1.2 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+  .txt h2 { font-size: clamp(24px, 3vw, 34px); line-height: 1.15; letter-spacing: -.01em; margin: 0 0 16px; text-wrap: balance; font-weight: 600; }
+  .txt p { margin: 0 0 14px; color: #3a3a3e; font-size: 16px; max-width: 65ch; }
+  .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .facts dt { font: 500 12px/1.2 var(--f-mono); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+  .facts dd { margin: 0; font-size: 14px; }
+  .dark { background: #0E2A1A; color: #F2F2EF; }
+  .dark p { color: #C2D6C8; } .dark .eyebrow { color: #84968A; }
+
+  /* floating action rail */
+  .rail { position: fixed; right: max(18px, env(safe-area-inset-right, 0px)); top: 150px; display: none; flex-direction: column; gap: 14px; z-index: 15; }
+  .rail button { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); background: #fff; display: grid; place-items: center; cursor: pointer; color: var(--ink); }
+  .rail button[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .rail small { display: block; text-align: center; font-size: 11px; color: var(--muted); margin-top: 4px; }
+  @media (min-width: 1560px) { .rail { display: flex; } }
+
+  /* footer info */
+  .info { padding-block: 56px 72px; background: var(--soft); border-top: 1px solid var(--line); }
+  .info-in { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 24px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 26px; }
+  .card h3 { margin: 0 0 6px; font-size: 20px; font-weight: 600; }
+  .card p { margin: 0 0 16px; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font-size: 13px; background: var(--chip); border-radius: 999px; padding: 7px 12px; }
+  .side { display: grid; gap: 18px; align-content: start; }
+  .side h4 { font: 500 12px/1.2 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+  .ownr { display: flex; align-items: center; gap: 12px; }
+  .ownr .owner-av { width: 38px; height: 38px; }
+  .legal { color: var(--muted); font-size: 12px; margin-top: 8px; }
+  .gap { height: clamp(28px, 5vw, 72px); background: var(--page); }
+  .mband { background: #dcdce0; padding: clamp(40px, 6vw, 88px) clamp(16px, 5vw, 72px); }
+  .mb-head { max-width: 760px; margin: 0 auto clamp(24px, 3vw, 40px); }
+  .mb-head h3 { font-size: clamp(22px, 2.6vw, 30px); line-height: 1.15; margin: 0 0 10px; font-weight: 600; letter-spacing: -.01em; }
+  .mb-head p { color: #3a3a3e; margin: 0; font-size: 16px; }
+  .mb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 2vw, 24px); }
+  .mb-grid figure { margin: 0; min-width: 0; }
+  .mb-grid .vbox { border-radius: 10px; overflow: hidden; background: #ececee; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 12px 32px rgba(0,0,0,.10); }
+  .mb-grid .snd { color: #111; background: rgba(255,255,255,.7); border-color: rgba(0,0,0,.25); }
+  .mb-grid video { display: block; width: 100%; height: auto; }
+  .mb-grid figcaption { font: 500 12px/1.3 var(--f-mono); letter-spacing: .04em; color: var(--muted); margin-top: 10px; }
+  .toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: #111; color: #fff; font-size: 13px; padding: 10px 16px; border-radius: 999px; opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 40; }
+  .toast.on { opacity: 1; }
+
+  @media (max-width: 760px) {
+    .row, .row.three, .mb-grid { grid-template-columns: 1fr; }
+    .facts { grid-template-columns: 1fr 1fr; }
+    .info-in { grid-template-columns: 1fr; }
+    .crumbs { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+
+<header class="top">
+  <div class="top-in">
+    <span class="studio">EO VIETNAM</span>
+    <span class="crumbs">Studio · Brand identity · 2026</span>
+    <span class="sp"></span>
+    <button class="btn" id="follow-top" type="button" aria-pressed="false">Follow</button>
+  </div>
+</header>
+
+<div class="head">
+  <div class="head-in">
+    <div class="owner-av"><img src="img/a08_avatar.jpg" alt="Peter Ahn avatar" width="44" height="44"></div>
+    <div>
+      <h1 class="ptitle">Peter Ahn — Brand Identity</h1>
+      <p class="powner">EO Vietnam Studio · Sales &amp; leadership</p>
+    </div>
+  </div>
+</div>
+
+<nav class="rail" aria-label="Project actions">
+  <div><button type="button" id="r-follow" aria-pressed="false" aria-label="Follow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><small>Follow</small></div>
+  <div><button type="button" id="r-save" aria-pressed="false" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button><small>Save</small></div>
+  <div><button type="button" id="r-share" aria-label="Copy link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v7h16v-7M12 3v13M7 8l5-5 5 5"/></svg></button><small>Share</small></div>
+  <div><button type="button" id="r-like" aria-pressed="false" aria-label="Appreciate"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21h4V9H2v12zm20-11a2 2 0 0 0-2-2h-6.3l1-4.6v-.3c0-.4-.2-.8-.4-1.1L13.2 1 6.6 7.6c-.4.4-.6.9-.6 1.4V19c0 1.1.9 2 2 2h9c.8 0 1.5-.5 1.8-1.2l3-7.1c.1-.2.2-.5.2-.7v-2z"/></svg></button><small>Appreciate</small></div>
+</nav>
+
+<main class="proj">
+  <!-- hero: logo motion -->
+  <section class="mod vbox" aria-label="Logo motion">
+    <video src="vid/hero_logo_motion_v2.mp4" autoplay muted loop playsinline preload="auto" poster="img/p_hero_v2.jpg"></video>
+    <button class="snd" type="button" aria-pressed="false">Sound off</button>
+  </section>
+
+  <section class="txt wrap">
+    <div class="in">
+      <p class="eyebrow">Brand identity · 2026</p>
+      <h2>Peter Ahn. Sales &amp; leadership, in deep green and paper.</h2>
+      <p>Peter Ahn is CCO at TigerBeetle and has built sales teams at Google, Dropbox and Slack. His channel and talks teach the long game of sales. The identity had to feel like him: direct, built on trust, and serious without being corporate.</p>
+      <p>We kept the PA monogram he already had, fixed the letter that read like an "R", gave it a wide name in Panell Wide, and built the whole system from deep green, paper and one shape: a staircase that climbs one step at a time.</p>
+      <dl class="facts">
+        <div><dt>Client</dt><dd>Peter Ahn</dd></div>
+        <div><dt>Scope</dt><dd>Logo, motion, social, video, print, merch</dd></div>
+        <div><dt>Studio</dt><dd>EO Vietnam</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <img class="mod" src="img/m00_concept.jpg" srcset="img/m00_concept-1400.jpg 1400w, img/m00_concept.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Concept: sales is a long game, four principles" width="2800" height="1760" loading="lazy" decoding="async">
+
+  <!-- evolution -->
+  <section class="mod vbox" aria-label="From the old logo to the new one">
+    <video src="vid/evolution_old_to_new_v2.mp4" poster="img/p_evolution_v2.jpg" autoplay muted loop playsinline preload="metadata"></video>
+    <button class="snd" type="button" aria-pressed="false">Sound off</button>
+  </section>
+  <section class="txt wrap">
+    <div class="in">
+      <p class="eyebrow">01 · From Peter Ahn Sales to PA</p>
+      <h2>The old wordmark draws itself into the new mark.</h2>
+      <p>The green underline of the old logo becomes the stroke that traces the monogram, then the name settles beside it. Every rule below comes from that mark.</p>
+    </div>
+  </section>
+  <img class="mod" src="img/a40_process.jpg" srcset="img/a40_process-1400.jpg 1400w, img/a40_process.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Process: lockup sketches tested on the mark" width="2800" height="1575" loading="lazy" decoding="async">
+
+  <!-- logo system -->
+  <img class="mod" src="img/m01_mark.jpg" srcset="img/m01_mark-1400.jpg 1400w, img/m01_mark.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="The PA monogram on a seven-unit grid" width="2800" height="1575" loading="lazy" decoding="async">
+  <img class="mod" src="img/m02_lockup.jpg" srcset="img/m02_lockup-1400.jpg 1400w, img/m02_lockup.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Combination mark with clear space and minimum sizes" width="2800" height="1575" loading="lazy" decoding="async">
+  <section class="mod vbox" aria-label="Logo construction animation">
+    <video src="vid/logo_construction.mp4" poster="img/p_construction.jpg" autoplay muted loop playsinline preload="metadata"></video>
+  </section>
+  <img class="mod" src="img/m03_versions.jpg" srcset="img/m03_versions-1400.jpg 1400w, img/m03_versions.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Logomark, logotype and combination mark on paper and on deep green" width="2800" height="1640" loading="lazy" decoding="async">
+  <div class="gap" aria-hidden="true"></div>
+  <img class="mod" src="img/m03b_donts.jpg" srcset="img/m03b_donts-1400.jpg 1400w, img/m03b_donts.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Incorrect use of the logo" width="2800" height="1640" loading="lazy" decoding="async">
+  <div class="gap" aria-hidden="true"></div>
+  <img class="mod" src="img/m04_scale.jpg" srcset="img/m04_scale-1400.jpg 1400w, img/m04_scale.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Mark at 512 to 32 pixels" width="2800" height="1500" loading="lazy" decoding="async">
+
+  <img class="mod" src="img/m05_colour.jpg" srcset="img/m05_colour-1400.jpg 1400w, img/m05_colour.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Colour palette: deep green, PA green, forest, paper, mint" width="2800" height="1640" loading="lazy" decoding="async">
+
+  <img class="mod" src="img/m06_type.jpg" srcset="img/m06_type-1400.jpg 1400w, img/m06_type.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Typography: Panell Wide, IBM Plex Mono, Plus Jakarta Sans and Noto Serif Display" width="2800" height="2000" loading="lazy" decoding="async">
+  <img class="mod" src="img/m06b_type_use.jpg" srcset="img/m06b_type_use-1400.jpg 1400w, img/m06b_type_use.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Typography in use on a title card" width="2800" height="1800" loading="lazy" decoding="async">
+
+  <img class="mod" src="img/m18_photography.jpg" srcset="img/m18_photography-1400.jpg 1400w, img/m18_photography.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Photography: real moments in real colour" width="2800" height="2050" loading="lazy" decoding="async">
+
+  <img class="mod" src="img/m07_system.jpg" srcset="img/m07_system-1400.jpg 1400w, img/m07_system.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Graphic system: staircase, dot field and pills" width="2800" height="1500" loading="lazy" decoding="async">
+  <img class="mod" src="img/m07b_stair_use.jpg" srcset="img/m07b_stair_use-1400.jpg 1400w, img/m07b_stair_use.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Staircase at four volumes: dominant, subtle, cropped, none" width="2800" height="1500" loading="lazy" decoding="async">
+  <img class="mod" src="img/m17_campaign.jpg" srcset="img/m17_campaign-1400.jpg 1400w, img/m17_campaign.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Campaign key visual: Trust before trial" width="2800" height="1700" loading="lazy" decoding="async">
+
+  <section class="txt wrap dark">
+    <div class="in">
+      <p class="eyebrow">02 · Channels</p>
+      <h2>YouTube, LinkedIn and the avatar share one frame.</h2>
+      <p>The staircase carries three facts about Peter, one per step. The dot field sits on the edge that the avatar or the platform UI covers, so nothing important is lost on any screen. The YouTube banner is the one black-and-white exception; LinkedIn and everything else run green.</p>
+    </div>
+  </section>
+  <img class="mod" src="img/a01_yt_banner.jpg" srcset="img/a01_yt_banner-1400.jpg 1400w, img/a01_yt_banner.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="YouTube channel banner" width="2560" height="1440" loading="lazy" decoding="async">
+  <img class="mod" src="img/a02_yt_desktop.jpg" srcset="img/a02_yt_desktop-1400.jpg 1400w, img/a02_yt_desktop.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="YouTube banner on desktop" width="2800" height="1576" loading="lazy" decoding="async">
+  <div class="row">
+    <div class="tall"><img src="img/a03_yt_mobile.jpg" alt="YouTube banner on mobile" width="1400" height="2306" loading="lazy" decoding="async"></div>
+    <div class="tall"><img src="img/a07_li_mobile.jpg" alt="LinkedIn profile on mobile" width="900" height="1600" loading="lazy" decoding="async"></div>
+  </div>
+  <img class="mod" src="img/a05_li_cover.jpg" srcset="img/a05_li_cover-1400.jpg 1400w, img/a05_li_cover.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="LinkedIn cover" width="2800" height="700" loading="lazy" decoding="async">
+  <div class="row">
+    <img src="img/a06_li_desktop.jpg" alt="LinkedIn profile on desktop" width="1600" height="1000" loading="lazy" decoding="async">
+    <img src="img/a04_yt_tv.jpg" alt="YouTube banner on TV" width="1400" height="842" loading="lazy" decoding="async">
+  </div>
+
+  <section class="txt wrap">
+    <div class="in">
+      <p class="eyebrow">03 · Video system</p>
+      <h2>Thumbnails: one face or two, always three lines.</h2>
+      <p>Every long-form thumbnail uses the same green halftone background, the new lockup in the top-left corner and a three-line METAFORA title with the middle line boxed. Interviews open the layout to two people without changing anything else.</p>
+    </div>
+  </section>
+  <img class="mod" src="img/m20_thumb_one.jpg" srcset="img/m20_thumb_one-1400.jpg 1400w, img/m20_thumb_one.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Thumbnail guideline, one person: annotated layout and three approved options" width="2800" height="2420" loading="lazy" decoding="async">
+  <img class="mod" src="img/m21_thumb_two.jpg" srcset="img/m21_thumb_two-1400.jpg 1400w, img/m21_thumb_two.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Thumbnail guideline, two people: annotated layout, before and after, layout grids" width="2800" height="2420" loading="lazy" decoding="async">
+  <img class="mod" src="img/m22_thumb_feed.jpg" srcset="img/m22_thumb_feed-1400.jpg 1400w, img/m22_thumb_feed.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Thumbnails in a desktop grid, a phone feed and at small sizes" width="2800" height="1980" loading="lazy" decoding="async">
+
+  <section class="txt wrap">
+    <div class="in">
+      <p class="eyebrow">03 · Shorts editing guide</p>
+      <h2>Shorts get one accent: mint on deep green.</h2>
+      <p>Six pages for editors: the system, colour and type, the text card, text on b-roll, safe zones for Shorts, Reels and TikTok, and the mistakes to check before export.</p>
+    </div>
+  </section>
+  <img class="mod" src="img/m23a_shorts_system.jpg" srcset="img/m23a_shorts_system-1400.jpg 1400w, img/m23a_shorts_system.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Shorts system: five rules, text card and text on b-roll" width="2800" height="1900" loading="lazy" decoding="async">
+  <img class="mod" src="img/m23b_shorts_colour_type.jpg" srcset="img/m23b_shorts_colour_type-1400.jpg 1400w, img/m23b_shorts_colour_type.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Shorts colour and type: deep green, mint, white, forest; Plus Jakarta Sans and Noto Serif Display Italic" width="2800" height="2050" loading="lazy" decoding="async">
+  <img class="mod" src="img/m23c_shorts_card.jpg" srcset="img/m23c_shorts_card-1400.jpg 1400w, img/m23c_shorts_card.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Shorts text card with margins and baseline spacing" width="2800" height="2000" loading="lazy" decoding="async">
+  <img class="mod" src="img/m23d_shorts_broll.jpg" srcset="img/m23d_shorts_broll-1400.jpg 1400w, img/m23d_shorts_broll.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Shorts text on b-roll with gradient and stagger" width="2800" height="2000" loading="lazy" decoding="async">
+  <img class="mod" src="img/m23e_shorts_safe.jpg" srcset="img/m23e_shorts_safe-1400.jpg 1400w, img/m23e_shorts_safe.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Shorts safe zones for the app interface, with a detail of the text block" width="2800" height="1990" loading="lazy" decoding="async">
+  <img class="mod" src="img/m23f_shorts_mistakes.jpg" srcset="img/m23f_shorts_mistakes-1400.jpg 1400w, img/m23f_shorts_mistakes.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Four common Shorts mistakes and the export checklist" width="2800" height="2440" loading="lazy" decoding="async">
+
+  <img class="mod" src="img/m19_stage.jpg" srcset="img/m19_stage-1400.jpg 1400w, img/m19_stage.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="On stage: the staircase slide on the LED wall" width="2800" height="1750" loading="lazy" decoding="async">
+  <img class="mod" src="img/m14_workshop.jpg" srcset="img/m14_workshop-1400.jpg 1400w, img/m14_workshop.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Workshop kit: deck, workbook and lesson cards (Questions before demos)" width="2800" height="1800" loading="lazy" decoding="async">
+
+  <img class="mod" src="img/m15_web.jpg" srcset="img/m15_web-1400.jpg 1400w, img/m15_web.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Website: landing page, full scroll and mobile" width="2800" height="2000" loading="lazy" decoding="async">
+
+  <img class="mod" src="img/m16_social.jpg" srcset="img/m16_social-1400.jpg 1400w, img/m16_social.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="LinkedIn carousel: statement, editorial, framework, big type" width="2800" height="1700" loading="lazy" decoding="async">
+
+  <!-- print -->
+  <section class="txt wrap">
+    <div class="in">
+      <p class="eyebrow">04 · Print</p>
+      <h2>Posters, cards and paper carry the same staircase.</h2>
+      <p>Deep green uncoated stock for anything Peter hands over, paper for anything people write on. The mark is debossed, never foiled.</p>
+    </div>
+  </section>
+  <img class="mod" src="img/m11a_deboss.jpg" srcset="img/m11a_deboss-1400.jpg 1400w, img/m11a_deboss.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Debossed business card on deep green stock" width="2800" height="1700" loading="lazy" decoding="async">
+  <img class="mod" src="img/m11b_macro.jpg" srcset="img/m11b_macro-1400.jpg 1400w, img/m11b_macro.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Detail: blind deboss on deep green uncoated stock" width="2800" height="1500" loading="lazy" decoding="async">
+  <img class="mod" src="img/m11_cards.jpg" srcset="img/m11_cards-1400.jpg 1400w, img/m11_cards.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Business cards, front and back" width="2800" height="1575" loading="lazy" decoding="async">
+  <img class="mod" src="img/m13_stationery.jpg" srcset="img/m13_stationery-1400.jpg 1400w, img/m13_stationery.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Stationery flat-lay: folder, letterhead, envelope, notebook, cards" width="2800" height="2000" loading="lazy" decoding="async">
+  <img class="mod" src="img/m10_posters.jpg" srcset="img/m10_posters-1400.jpg 1400w, img/m10_posters.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Three talk posters" width="2800" height="1900" loading="lazy" decoding="async">
+  <img class="mod" src="img/m14b_workbook.jpg" srcset="img/m14b_workbook-1400.jpg 1400w, img/m14b_workbook.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Workbook spread with the full type hierarchy" width="2800" height="1900" loading="lazy" decoding="async">
+
+
+  <section class="txt wrap dark">
+    <div class="in">
+      <p class="eyebrow">05 · Merchandise</p>
+      <h2>A black tee that reads from across the room.</h2>
+      <p>On the back, the mark is broken into a halftone that fades from white to grey, with the two words Peter teaches on either side. On the front, a three-line note and a small grey mark.</p>
+    </div>
+  </section>
+  <div class="row">
+    <img src="img/a30_tee_front.jpg" alt="Tee, front" width="1400" height="1400" loading="lazy" decoding="async">
+    <img src="img/a31_tee_back.jpg" alt="Tee, back" width="1400" height="1400" loading="lazy" decoding="async">
+  </div>
+  <img class="mod" src="img/m12d_tee_product.jpg" srcset="img/m12d_tee_product-1400.jpg 1400w, img/m12d_tee_product.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Tee only, front and back flat lay on concrete, with print close-ups" width="2800" height="3010" loading="lazy" decoding="async">
+  <img class="mod" src="img/a33_tee_editorial.jpg" srcset="img/a33_tee_editorial-1400.jpg 1400w, img/a33_tee_editorial.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Tee editorial: real-colour model on a brand-green set, staircase light" width="2800" height="1750" loading="lazy" decoding="async">
+  <img class="mod" src="img/m12_merch_print.jpg" srcset="img/m12_merch_print-1400.jpg 1400w, img/m12_merch_print.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Tee print files, front and back" width="2800" height="1575" loading="lazy" decoding="async">
+  <img class="mod" src="img/m12c_halftone_build.jpg" srcset="img/m12c_halftone_build-1400.jpg 1400w, img/m12c_halftone_build.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="From mark to halftone: vector mark, 44 px grid, squares by size, tone fade" width="2800" height="1640" loading="lazy" decoding="async">
+  <img class="mod" src="img/a32_tee_detail.jpg" srcset="img/a32_tee_detail-1400.jpg 1400w, img/a32_tee_detail.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Tee back print at print size, with a 4.5x loupe on the jersey" width="2800" height="1600" loading="lazy" decoding="async">
+  <img class="mod" src="img/m12b_label.jpg" srcset="img/m12b_label-1400.jpg 1400w, img/m12b_label.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Detail: woven neck label" width="2800" height="1500" loading="lazy" decoding="async">
+
+  <img class="mod" src="img/m99_thanks.jpg" srcset="img/m99_thanks-1400.jpg 1400w, img/m99_thanks.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Closing: Trust before trial" width="2800" height="1800" loading="lazy" decoding="async">
+  <img class="mod" src="img/m99b_close.jpg" srcset="img/m99b_close-1400.jpg 1400w, img/m99b_close.jpg 2800w" sizes="(max-width: 1440px) 100vw, 1400px" alt="Thank you" width="2800" height="1300" loading="lazy" decoding="async">
+</main>
+
+<footer class="info wrap">
+  <div class="info-in">
+    <div class="card">
+      <h3>Peter Ahn — Brand Identity</h3>
+      <p>Logo system, motion, YouTube and LinkedIn, thumbnails, Shorts guideline, print and merchandise.</p>
+      <div class="chips" style="margin-bottom:18px">
+        <button class="btn" id="like-foot" type="button" aria-pressed="false">Appreciate project</button>
+        <button class="btn ghost" id="share-foot" type="button">Copy link</button>
+      </div>
+      <p class="legal">© 2026 EO Vietnam. All rights reserved.</p>
+    </div>
+    <div class="side">
+      <div class="card">
+        <h4>Owner</h4>
+        <div class="ownr"><div class="owner-av"><img src="img/a08_avatar.jpg" alt="" width="38" height="38"></div><div><strong>EO Vietnam Studio</strong><div class="legal" style="margin:0">Brand &amp; motion</div></div></div>
+      </div>
+      <div class="card">
+        <h4>Tools</h4>
+        <div class="chips"><span class="chip">Illustrator</span><span class="chip">Photoshop</span><span class="chip">After Effects</span></div>
+      </div>
+      <div class="card">
+        <h4>Fields</h4>
+        <div class="chips"><span class="chip">Branding</span><span class="chip">Logo design</span><span class="chip">Motion design</span><span class="chip">Video</span><span class="chip">Merchandise</span></div>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var toast = document.getElementById('toast'), tt;
+  function say(m) { toast.textContent = m; toast.classList.add('on'); clearTimeout(tt); tt = setTimeout(function () { toast.classList.remove('on'); }, 1600); }
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+  function toggle(ids, key, on, off) {
+    var els = ids.map(function (i) { return document.getElementById(i); }).filter(Boolean);
+    function set(v) { els.forEach(function (el) { el.setAttribute('aria-pressed', v ? 'true' : 'false'); if (el.classList.contains('btn')) el.textContent = v ? on : off; }); }
+    set(store(key) === '1');
+    els.forEach(function (el) { el.addEventListener('click', function () { var v = el.getAttribute('aria-pressed') !== 'true'; set(v); store(key, v ? '1' : '0'); say(v ? on : off.replace('project', '').trim() + ' removed'); }); });
+  }
+  toggle(['follow-top', 'r-follow'], 'pa-follow', 'Following', 'Follow');
+  toggle(['r-save'], 'pa-save', 'Saved', 'Save');
+  toggle(['like-foot', 'r-like'], 'pa-like', 'Appreciated', 'Appreciate project');
+  function copy() {
+    var u = location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(u).then(function () { say('Link copied'); }, function () { say(u); });
+    else say(u);
+  }
+  ['r-share', 'share-foot'].forEach(function (i) { var b = document.getElementById(i); if (b) b.addEventListener('click', copy); });
+  document.querySelectorAll('.snd').forEach(function (b) {
+    var v = b.parentElement.querySelector('video');
+    b.addEventListener('click', function () {
+      document.querySelectorAll('video').forEach(function (o) { if (o !== v) o.muted = true; });
+      document.querySelectorAll('.snd').forEach(function (o) { if (o !== b) { o.setAttribute('aria-pressed', 'false'); o.textContent = 'Sound off'; } });
+      v.muted = !v.muted; if (!v.muted) { v.currentTime = 0; v.play(); }
+      b.setAttribute('aria-pressed', v.muted ? 'false' : 'true'); b.textContent = v.muted ? 'Sound off' : 'Sound on';
+    });
+  });
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('video').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
+})();
+</script>
